@@ -14,7 +14,7 @@ const sendEmail = async ( email,subject,text )=>{
                 pass: process.env.EMAIL_PASS
             }
         })
-
+// added syncronous function to catch error
         await Transporter.sendMail({
             from: process.env.EMAIL_USER,
             to:email,
@@ -22,7 +22,8 @@ const sendEmail = async ( email,subject,text )=>{
         })
     } catch (error) {
         console.log('error ocurred', error);
-        
+    
+
     }
 }
 
